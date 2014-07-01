@@ -30,10 +30,7 @@ class News_model extends CI_Model {
     }
     
     public function get_news_autor($autor = FALSE) {
-        if ($autor === FALSE) {
-            $query = $this->db->get('news');
-            return $query->result_array();
-        }
+       
 
         $query = $this->db->get_where('news', array('autor' => $autor));
         return $query->result_array();
